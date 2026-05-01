@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Suma / Resta";
+}
+
+<h2>Suma / Resta</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form method="post" action="/Prueba/Suma">
+                <div class="mb-3">
+                    <label for="x" class="form-label">Número 1:</label>
+                    <input type="number" class="form-control" name="x" id="x" required />
+                </div>
+                <div class="mb-3">
+                    <label for="y" class="form-label">Número 2:</label>
+                    <input type="number" class="form-control" name="y" id="y" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Operación:</label><br />
+                    <input type="radio" name="r1" value="suma" checked />
+                    <label>Suma (+)</label><br />
+                    <input type="radio" name="r1" value="resta" />
+                    <label>Resta (-)</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Calcular</button>
+            </form>
+
+            @if (ViewBag.Rest != null)
+            {
+                <div class="alert alert-danger mt-3">
+                    Resultado: @ViewBag.Rest
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
