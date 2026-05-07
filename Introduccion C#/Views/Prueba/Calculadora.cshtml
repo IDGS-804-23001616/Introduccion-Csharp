@@ -1,0 +1,41 @@
+﻿@model Introduccion_C_.Models.OperacionesBasicas
+
+@{
+    ViewBag.Title = "Calculadora";
+}
+
+<h2>Calculadora</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+
+            <form method="post" action="/Prueba/Calculadora">
+
+                <div class="mb-3">
+                    <label for="Num1" class="form-label"> Número 1: </label>
+
+                    <input type="number" class="form-control" name="Num1" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="Num2" class="form-label">
+                        Número 2:
+                    </label>
+                    <input type="number"
+         class="form-control"
+                           name="Num2"
+                           required />
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary">Calcular</button>
+            </form>
+            <br />
+            <div class="alert alert-danger mt-3">
+                Resultado:
+                @Html.DisplayFor(model => model.Resultado)
+            </div>
+
+        </div>
+    </div>
+</div>

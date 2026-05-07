@@ -1,0 +1,45 @@
+﻿@model Introduccion_C_.Models.DistanciaPuntos
+
+@{
+    ViewBag.Title = "Distancia entre puntos";
+}
+
+<h2>Distancia entre puntos</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form method="post" action="/Distancia/Index">
+                <div class="mb-3">
+                    <label class="form-label"> X1: </label>
+                    <input type="number" class="form-control" name="x1" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Y1: </label>
+                    <input type="number" class="form-control" name="y1" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">
+                        X2:
+                    </label>
+                    <input type="number" class="form-control" name="x2" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Y2: </label>
+
+                    <input type="number" class="form-control" name="y2" required />
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary"> Calcular </button>
+
+            </form>
+            <br />
+
+            <div class="alert alert-success">
+                Resultado:
+                @Html.DisplayFor(model => model.Resultado)
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Introduccion_C_.Models;
+using Introduccion_C_.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -24,5 +26,18 @@ namespace Introduccion_C_.Controllers
             ViewBag.Rest=Convert.ToString(resultado);
             return View();
         }
+        public ActionResult MuestraPeliculas()
+        {
+            var PeliculaService = new PeliculaService();
+            var model = PeliculaService.ObtenerPelicula();
+            return View(model);
+        }
+        public ActionResult Calculadora(OperacionesBasicas op)
+        {
+            op.Suma();
+
+            return View(op);
+        }
+
     }
 }
